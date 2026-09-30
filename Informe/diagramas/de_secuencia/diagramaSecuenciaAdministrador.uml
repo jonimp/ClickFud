@@ -1,0 +1,36 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+skinparam BoxPadding 10
+skinparam maxMessageSize 120
+
+actor Administrador
+participant "Sistema de Pedidos" as Sistema
+participant "Cocina" as Cocina
+participant "Módulo Repartidores" as Repartidores
+participant "Cliente" as Cliente
+
+== Recepción de pedido ==
+
+Sistema -> Administrador : Notificar nuevo pedido
+Administrador -> Sistema : Consultar pedidos entrantes
+Sistema --> Administrador : Lista de pedidos
+
+== Procesamiento del pedido ==
+
+Administrador -> Cocina : Enviar pedido a preparación
+Cocina -> Sistema : Actualizar estado "en preparación"
+Sistema --> Administrador : Estado actualizado
+
+== Confirmación del pedido ==
+
+Administrador -> Sistema : Confirmar pedido listo
+Sistema -> Cliente : Enviar confirmación
+
+== Asignación de reparto ==
+
+Administrador -> Repartidores : Asignar pedido a repartidor
+Repartidores -> Sistema : Confirmar aceptación del envío
+Sistema --> Administrador : Repartidor asignado
+
+@enduml

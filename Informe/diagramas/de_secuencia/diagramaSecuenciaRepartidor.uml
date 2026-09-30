@@ -1,0 +1,34 @@
+@startuml
+
+actor Repartidor
+participant "Sistema de Pedidos" as Sistema
+participant "Servidor Notificaciones" as Notif
+participant "Chat del Local" as Chat
+
+== Recepción de pedido ==
+
+Sistema -> Notif : Enviar notificación de envío
+Notif -> Repartidor : Aviso de nuevo pedido
+
+== Consulta de envío ==
+
+Repartidor -> Sistema : Consultar envíos disponibles
+Sistema --> Repartidor : Lista de pedidos asignados
+
+== Chat con el local ==
+
+Repartidor -> Chat : Abrir conversación
+Chat -> Sistema : Solicitar historial de mensajes
+Sistema --> Chat : Mensajes
+Chat --> Repartidor : Mostrar chat
+
+Repartidor -> Chat : Enviar mensaje
+Chat -> Sistema : Guardar y reenviar mensaje
+
+== Entrega ==
+
+Repartidor -> Sistema : Confirmar entrega del pedido
+Sistema -> Notif : Actualizar estado "entregado"
+Notif -> Cliente : Notificación de entrega
+
+@enduml

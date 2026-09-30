@@ -1,0 +1,37 @@
+@startuml
+
+skinparam sequenceMessageAlign center
+skinparam BoxPadding 10
+skinparam maxMessageSize 120
+
+actor Cliente
+participant "Web Restaurante" as Web
+participant "Sistema de Pedidos" as Sistema
+participant "Pasarela de Pago" as Pago
+participant "WhatsApp" as WhatsApp
+
+== Acceso y selección ==
+
+Cliente -> Web : Entrar a la web
+Web -> Sistema : Solicitar menú
+Sistema --> Web : Mostrar productos
+Web --> Cliente : Mostrar catálogo
+
+Cliente -> Web : Seleccionar productos
+Cliente -> Web : Elegir tipo (Domicilio/Retiro)
+Cliente -> Web : Seleccionar pago
+
+== Procesamiento del pedido ==
+
+Web -> Sistema : Enviar pedido
+Sistema -> Pago : Validar pago (si aplica)
+Pago --> Sistema : Confirmación de pago
+
+Sistema -> Sistema : Crear pedido
+
+== Confirmación ==
+
+Sistema -> Confirm : Enviar confirmación
+Confirm -> Cliente : Mensaje de pedido confirmado
+
+@enduml

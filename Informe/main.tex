@@ -1,0 +1,119 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[spanish]{babel}
+\usepackage[document]{ragged2e} 
+\addto\captionsspanish{\renewcommand{\contentsname}{Índice}}
+
+\usepackage{titlesec}
+
+% Modifica el formato del comando \chapter
+\titleformat{\chapter}[hang]
+{\normalfont\huge\bfseries} % Estilo del texto (Grande y Negrita)
+{\thechapter\ - }           % Lo que va antes del título: "1 - "
+{0pt}                       % Espacio entre el número y el título
+{\MakeUppercase}            % Fuerza el título a estar en MAYÚSCULAS
+
+\usepackage[margin=2cm]{geometry}
+\usepackage{booktabs,tabularx,longtable}
+\usepackage[table]{xcolor}
+\usepackage{enumitem,fancyhdr,hyperref}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+
+\definecolor{ink}{HTML}{263746}\definecolor{red}{HTML}{9A3E3E}\definecolor{pale}{HTML}{FAEEEE}
+\hypersetup{colorlinks=true,linkcolor=red,urlcolor=red}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+\RaggedRight
+\begin{titlepage}\centering{\color{ink}\Large\bfseries UNIVERSIDAD TECNOLÓGICA NACIONAL\par}\vspace{0.5cm}{\normalsize\bfseries INSTITUTO NACIONAL SUPERIOR DEL PROFESORADO TÉCNICO\par}
+
+\vspace{1.6cm}\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.35\textwidth]{imagenes/logoUTN.png}
+\end{figure}
+	
+\vspace{1.3cm}{\Large Informe Final\par}
+\vspace{0.1cm}{\selectfont\huge\bfseries Clickfud\par}
+\vspace{0.1cm}{\selectfont\huge\bfseries Sistema  de pedidos de comida a domicilio ó para llevar\par}
+\vspace{1.2cm}{\Large Trabajo final de Seminario 3.603}
+\vspace{1.2cm}\textit{\Large \\Imperi, Jonatan Eduardo \\151957 \\jonatan.imperi@alu.inspt.utn.edu.ar}
+\vspace{1.2cm}{\Large \\Fecha de presentación \\ \textit{09/11/2026}}
+\vspace{1.2cm}{\Large{\\Docente de cátedra\\Prof. Mermoz, Daniel}}
+\end{titlepage}
+
+\thispagestyle{empty} % Quita el número solo en esta página
+
+\newpage
+~
+\pagenumbering{Roman} % Cambia a romanos mayúsculas
+\newpage
+
+\section*{\Huge RESUMEN}
+\begin{justify}
+El desarrollo de ClickFud  tiene como finalidad entregar al cliente un sistema donde recibir y gestionar pedidos de su restaurante. Los consumidores tienen acceso a la página web por medio de cualquier navegador en donde hacen los pedidos, evitando de esta manera tener la obligación de descargar una aplicación dedicada a tal fin. El sistema completo se compone de tres interfaces visuales con las que se interactúa.
+
+La interfaz principal, utilizada por el administrador del local es una aplicación web que recibe y gestiona los pedidos entrantes, tener el control de las comandas y los pagos, tener el contacto de los clientes y además poseer un chat con el cual poder comunicarse con los repartidores a domicilio.
+
+La segunda interfaz es una aplicación móvil para Android destinada a los repartidores del local para dar aviso de los envíos pendientes, confirmar las entregas y brindarles servicio de mapa con la ruta hacia el destino de entrega como también un chat para poder comunicarse con el restaurante.
+
+La tercera interfaz orientada al público, es una tienda virtual que muestra las platos disponibles, ofrece a opción de retirar por el local o recibir el pedido a domicilio. Elegir el medio de pago y concretar la compra.
+\end{justify}
+\newpage
+~
+\newpage
+
+\section*{\Huge ABSTRACT}
+\begin{justify}
+The development of ClickFud aims to provide the client with a system for receiving and managing restaurant orders. Consumers access the website via any web browser to place orders, thereby avoiding the need to download a dedicated app. The complete system consists of three interactive visual interfaces.
+
+The main interface, used by the establishment's administrator, is a web application that receives and manages incoming orders; it handles order tracking and payments, maintains customedr contact details, and includes a chat feature for communicating with delivery drivers.
+
+The second interface is an Android mobile app designed for the establishment's delivery drivers; it notifies them of pending deliveries, allows them to confirm completed deliveries, provides mapping services with routes to the destination, and includes a chat function for communicating with the restaurant.
+
+The third interface, aimed at the public, is an online store that displays available dishes and offers the choice between pickup and home delivery, allowing customers to select a payment method and complete their purchase.
+\end{justify}
+\newpage
+~
+\newpage
+
+\tableofcontents
+
+\newpage
+~
+\newpage
+\texttt{}
+\chapter{Introducción}
+\begin{justify}
+El rubro gastronómico es de los que funcionan casi todos los días de la semana ya que la demanda de consumo lo requiere y hace posible. De esta manera, los locales que trabajan haciendo entregas a domicilio como también los que preparan el pedido para ser retirados por el cliente en el lugar, necesitan gestionar y procesar tales encargos. Hasta no hace mucho tiempo, los pedidos realizados de forma remota eran mediante llamadas telefónicas exclusivamente, y aunque hoy en día algunos optan por la mensajería instantánea, lo más habitual es el uso de aplicaciones que conectan el negocio de comida con miles de clientes cercanos y se encarga de la logística de entrega.
+El principal problema que presentan dichas aplicaciones es el encarecimiento del producto final para el cliente como consecuencia del costo de las comisiones para los vendedores, lo cual puede inhibir el consumo.
+El motivo para la creación de este sistema es reducir esos costos como también prescindir de sus métodos de venta que consisten en incentivar constantemente al consumidor con ofertas que duran muy poco tiempo.
+\end{justify}
+
+\pagenumbering{arabic}
+	
+\chapter{Estado del arte}
+Existen aplicaciones dedicadas a la compra y envío a domicilio de comida que funcionan como intermediarios entre los clientes y los negocios de comida oferentes, encargandose de la logística de entrega.
+\section{PedidosYa}
+Se encuentra entre las aplicaciones más conocidas de entrega a domicilio. PedidosYa no cobra una comisión fija única para todos, sino un porcentaje variable sobre el valor de cada pedido. En muchos casos arranca con promociones iniciales (por ejemplo, 5 por ciento el primer mes, 15 por ciento el segundo y un 25 por ciento a 30 por ciento a partir del tercer mes o según el tipo de contrato). Estos costos de comisión impulsan a que los locales aumenten sus precios finales en la aplicación en comparación a los precios de manera directa.
+El esquema de pago hacia el negocio se hace de forma semanal
+\section{Rappi}
+Modelos de entrega: Podés optar por usar los repartidores de la app (conocidos como Rappitenderos) o utilizar tu propio equipo de delivery.
+Exclusividad: A diferencia de otras plataformas, la sección de Rappi Partners te da la opción de firmar un acuerdo de exclusividad. Si elegís vender solo a través de Rappi y no en otras apps, te suelen ofrecer una tasa de comisión más baja.
+Visibilidad: Su algoritmo prioriza mucho a los negocios que participan en promociones, lo que te obliga a analizar bien los márgenes para figurar en las primeras posiciones de la pantalla de los usuarios.
+Comisión por pedido: El costo estándar para restaurantes oscila entre el 25 por ciento y el 30 por ciento + IVA por cada venta realizada si usás su logística. Si tenés repartidores propios, ese porcentaje disminuye notablemente.Frecuencia de pago: Esta es la diferencia más importante con su competencia directo. Mientras otras plataformas liquidan semanalmente, el esquema de Pagos de Rappi para Argentina está estructurado de forma quincenal. Recibís el dinero en la cuenta bancaria declarada junto con el desglose del período en el Portal Partners.
+Costo Real Efectivo: Tené en cuenta que al porcentaje nominal del 25 por ciento o 30 por ciento hay que sumarle el IVA sobre la comisión, el costo financiero por transferencias y los posibles descuentos de las promociones en las que participes. En la práctica, muchos gastronómicos calculan que el costo efectivo de canal se acerca al 35 por ciento del valor del plato.
+\section{FUDO}
+
+\chapter{Definición del problema}
+
+\chapter{Solución propuesta}
+
+\chapter{Solución propuesta}
+
+
+
+
+
+
+
+\end{document}

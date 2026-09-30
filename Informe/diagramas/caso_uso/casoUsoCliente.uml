@@ -1,0 +1,24 @@
+@startuml
+left to right direction
+
+actor Cliente
+actor "Sistema Web" as Sistema
+actor "WhatsApp" as WhatsApp
+
+rectangle "Sistema de Pedidos Restaurante" {
+
+    usecase "Entrar a la web" as UC1
+    usecase "Seleccionar productos" as UC2
+    usecase "Elegir tipo de pedido\n(Domicilio / Retiro)" as UC3
+    usecase "Seleccionar medio de pago\n(Efectivo / Transferencia)" as UC4
+    usecase "Enviar pedido" as UC5
+    usecase "Recibir confirmación" as UC6
+}
+
+Cliente --> UC1
+Cliente --> UC2
+Cliente --> UC3
+Cliente --> UC4
+Cliente --> UC5
+
+@enduml

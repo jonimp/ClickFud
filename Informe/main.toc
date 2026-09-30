@@ -1,0 +1,9 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Estado del arte}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}PedidosYa}{2}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Rappi}{2}{section.2.2}%
+\contentsline {section}{\numberline {2.3}FUDO}{2}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Definición del problema}{3}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Solución propuesta}{4}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Solución propuesta}{5}{chapter.5}%

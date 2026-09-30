@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+
+actor Repartidor
+
+rectangle "Sistema de Pedidos Restaurante" {
+
+    usecase "Consultar envíos" as UC1
+    usecase "Recibir notificacióin de envío" as UC2
+    usecase "Acceder al chat del local" as UC3
+    usecase "Confirmar entrega" as UC4
+  
+}
+
+Repartidor --> UC1
+Repartidor --> UC2
+Repartidor --> UC3
+Repartidor --> UC4
+
+
+
+
+@enduml
