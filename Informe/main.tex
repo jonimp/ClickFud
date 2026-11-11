@@ -50,7 +50,7 @@
 
 \section*{\Huge RESUMEN}
 \begin{justify}
-El desarrollo de ClickFud  tiene como finalidad entregar al cliente un sistema donde recibir y gestionar pedidos de su restaurante. Los consumidores tienen acceso a la página web por medio de cualquier navegador en donde hacen los pedidos, evitando de esta manera tener la obligación de descargar una aplicación dedicada a tal fin. El sistema completo se compone de tres interfaces visuales con las que se interactúa.
+El desarrollo de ClickFud  tiene como finalidad entregar al cliente un sistema donde recibir y gestionar pedidos de su restaurante. Los consumidores tienen acceso a la página web por medio de cualquier navegador en donde hacen los pedidos, evitando de esta manera tener la obligación de descargar una aplicación dedicada a tal fin. El sistema completo se compone de tres interfaces visuales con las que se interactúan los distintos tipo de usuario.
 
 La interfaz principal, utilizada por el administrador del local es una aplicación web que recibe y gestiona los pedidos entrantes, tener el control de las comandas y los pagos, tener el contacto de los clientes y además poseer un chat con el cual poder comunicarse con los repartidores a domicilio.
 
@@ -92,7 +92,9 @@ El motivo para la creación de este sistema es reducir esos costos como también
 \pagenumbering{arabic}
 	
 \chapter{Estado del arte}
-Existen aplicaciones dedicadas a la compra y envío a domicilio de comida que funcionan como intermediarios entre los clientes y los negocios de comida oferentes, encargandose de la logística de entrega.
+\begin{justify}
+Las plataformas de delivery (pedidosYa, Rappi) ofrecen alcance y logística, pero cobran comisiones por pedido que reducen el margen del comercio. Por otro lado, los sistemas de gestión (FUDO, Bistrosoft, Kyte) resuelven la operación interna del local con un alcance funcional amplio, aunque no están orientados a un circuito de delivery propio de punta a punta. Este proyecto propone un modelo híbrido: un sistema de alcance acotado que integra en una sola solución la gestión de pedidos y cobros del local, una web de compra para clientes y una aplicación para repartidores propios, eliminando la comisión por pedido a costa de un menor número de funcionalidades.
+\end{justify}
 
 \section{PedidosYa}
 \begin{justify}
@@ -102,19 +104,16 @@ El esquema de pago hacia el negocio se hace de forma semanal
 
 \section{Rappi}
 \begin{justify}
-Modelos de entrega: Podés optar por usar los repartidores de la app (conocidos como Rappitenderos) o utilizar tu propio equipo de delivery.
-Exclusividad: A diferencia de otras plataformas, la sección de Rappi Partners te da la opción de firmar un acuerdo de exclusividad. Si elegís vender solo a través de Rappi y no en otras apps, te suelen ofrecer una tasa de comisión más baja.
-Visibilidad: Su algoritmo prioriza mucho a los negocios que participan en promociones, lo que te obliga a analizar bien los márgenes para figurar en las primeras posiciones de la pantalla de los usuarios.
-Comisión por pedido: El costo estándar para restaurantes oscila entre el 25 por ciento y el 30 por ciento + IVA por cada venta realizada si usás su logística. Si tenés repartidores propios, ese porcentaje disminuye notablemente.Frecuencia de pago: Esta es la diferencia más importante con su competencia directo. Mientras otras plataformas liquidan semanalmente, el esquema de Pagos de Rappi para Argentina está estructurado de forma quincenal. Recibís el dinero en la cuenta bancaria declarada junto con el desglose del período en el Portal Partners.
-Costo Real Efectivo: Tené en cuenta que al porcentaje nominal del 25 por ciento o 30 por ciento hay que sumarle el IVA sobre la comisión, el costo financiero por transferencias y los posibles descuentos de las promociones en las que participes. En la práctica, muchos gastronómicos calculan que el costo efectivo de canal se acerca al 35 por ciento del valor del plato.
+Muy parecida a PedidosYa pero con diferencias en condiciones de negocio, otro tipos de comisiones, distintos acuerdos, etc.
 \end{justify}
 
 \section{FUDO}
 \begin{justify}
-
+Fudo es una plataforma de gestión gastronómica en la nube que funciona 100 por ciento desde el navegador de una computadora, tablet o celular, sin necesidad de instalaciones complejas. Centraliza el salón, la cocina, el delivery, el control de stock, la caja y la facturación electrónica en un solo sistema.
 \end{justify}
 \chapter{Definición del problema}
-
+La problemática ligada al estado del arte en donde las aplicaciones existentes tienen diferente formas de negocio, estas no cubren las necesidades mas elementales en su totalidad por si solas, mientras una tiene la logistica de entrega bien solucionada, traslada los precios finales de os productos. Y los que trabajan como gestión de negocio no resuelven de forma autónoma los envíos, ya que terminan tercer izando con las antes mencionadas.
+Como dos pendientes a resolver son: Una solución propia de los envíos a domicilio y un sistema sencillo de manejar que cuente con lo necesario para el trabajo del día a día.
 \chapter{Solución propuesta}
 
 \section{Análisis de requisitos}
