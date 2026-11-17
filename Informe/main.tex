@@ -1,9 +1,37 @@
 \documentclass[12pt,a4paper]{report}
-\usepackage[spanish]{babel}
-\usepackage[document]{ragged2e} 
+\usepackage[spanish]{babel} 
+\usepackage{titlesec}
+\usepackage{chngcntr}
+\usepackage[margin=2cm]{geometry}
+\usepackage{booktabs,tabularx,longtable}
+\usepackage[table]{xcolor}
+\usepackage{enumitem,fancyhdr}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{tocloft}
+\usepackage{float}
+\usepackage{hyperref}
+
 \addto\captionsspanish{\renewcommand{\contentsname}{Índice}}
 
-\usepackage{titlesec}
+% --- CONFIGURACIÓN DE FIGURAS ---
+\counterwithout{figure}{chapter}
+\renewcommand{\cftfigpresnum}{Figura }
+\renewcommand{\cftfigaftersnum}{:}
+\setlength{\cftfignumwidth}{5.5em}
+
+
+% 2. Registrar la lista en tocloft para habilitar \cftdiagramapresnum
+\newlistof{diagrama}{lod}{Índice de diagramas}
+
+% 3. Aplicar el formato deseado
+\renewcommand{\cftdiagramapresnum}{Diagrama }
+\renewcommand{\cftdiagramaaftersnum}{:}
+\setlength{\cftdiagramanumwidth}{6.5em}
+
+% 4. Mantener la numeración continua (1, 2, 3...) sin número de capítulo
+\counterwithout{diagrama}{chapter}
+
 
 % Modifica el formato del comando \chapter
 \titleformat{\chapter}[hang]
@@ -12,19 +40,34 @@
 {0pt}                       % Espacio entre el número y el título
 {\MakeUppercase}            % Fuerza el título a estar en MAYÚSCULAS
 
-\usepackage[margin=2cm]{geometry}
-\usepackage{booktabs,tabularx,longtable}
-\usepackage[table]{xcolor}
-\usepackage{enumitem,fancyhdr,hyperref}
-\usepackage{graphicx}
-\usepackage{ragged2e}
+
+
 
 \definecolor{ink}{HTML}{263746}\definecolor{red}{HTML}{9A3E3E}\definecolor{pale}{HTML}{FAEEEE}
 \hypersetup{colorlinks=true,linkcolor=red,urlcolor=red}
 \renewcommand{\headrulewidth}{0.4pt}
 
+% --- CONFIGURACIÓN DE FIGURAS ---
+\counterwithout{figure}{chapter}
+\renewcommand{\cftfigpresnum}{Figura }
+\renewcommand{\cftfigaftersnum}{:}
+\setlength{\cftfignumwidth}{4.5em}
+
+% --- CONFIGURACIÓN DE DIAGRAMAS (SIN CONFLICTOS) ---
+% 1. Definir el entorno flotante con el paquete 'float'
+\newfloat{diagrama}{htbp}{lod}
+\floatname{diagrama}{Diagrama}
+
+% 2. Configurar su índice con 'tocloft'
+
+\renewcommand{\cftdiagramapresnum}{Diagrama }
+\renewcommand{\cftdiagramaaftersnum}{:}
+\setlength{\cftdiagramanumwidth}{6em}
+
+
 \begin{document}
 \RaggedRight
+
 \begin{titlepage}\centering{\color{ink}\Large\bfseries UNIVERSIDAD TECNOLÓGICA NACIONAL\par}\vspace{0.5cm}{\normalsize\bfseries INSTITUTO NACIONAL SUPERIOR DEL PROFESORADO TÉCNICO\par}
 
 \vspace{1.6cm}\begin{figure}[h]
@@ -77,6 +120,12 @@ The third interface, aimed at the public, is an online store that displays avail
 \newpage
 
 \tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listofdiagrama % <-- Nuevo comando generado automáticamente
+\newpage
+
 
 \newpage
 ~
@@ -134,8 +183,46 @@ Como dos pendientes a resolver son: Una solución propia de los envíos a domici
 
 
 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{imagenes/modulos.png}
+	\caption{Costos de los planes}
+\end{figure}
 
+\begin{diagrama}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{diagramas/caso_uso/casoUsoAdministrador.png}
+	\caption{Caso uso usuario administrador}
+\end{diagrama}
 
+\begin{diagrama}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{diagramas/caso_uso/casoUsoCliente.png}
+	\caption{Caso uso usuario cliente}
+\end{diagrama}
 
+\begin{diagrama}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{diagramas/caso_uso/casoUsoRepartidor.png}
+	\caption{Caso uso usuario Repartidor}
+\end{diagrama}
+
+\begin{diagrama}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{diagramas/de_secuencia/diagramaSecuenciaAdministrador.png}
+	\caption{De secuencia usuario administrador}
+\end{diagrama}
+
+\begin{diagrama}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{diagramas/de_secuencia/diagramaSecuenciaCliente.png}
+	\caption{De secuencia usuario cliente}
+\end{diagrama}
+
+\begin{diagrama}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{diagramas/de_secuencia/diagramaSecuenciaRepartidor.png}
+	\caption{De secuencia usuario repartidor}
+\end{diagrama}
 
 \end{document}
