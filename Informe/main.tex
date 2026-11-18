@@ -80,7 +80,7 @@
 \vspace{0.1cm}{\selectfont\huge\bfseries Sistema  de pedidos de comida a domicilio ó para llevar\par}
 \vspace{1.2cm}{\Large Trabajo final de Seminario 3.603}
 \vspace{1.2cm}\textit{\Large \\Imperi, Jonatan Eduardo \\151957 \\jonatan.imperi@alu.inspt.utn.edu.ar}
-\vspace{1.2cm}{\Large \\Fecha de presentación \\ \textit{09/11/2026}}
+\vspace{1.2cm}{\Large \\Fecha de presentación \\ \textit{19/11/2026}}
 \vspace{1.2cm}{\Large{\\Docente de cátedra\\Prof. Mermoz, Daniel}}
 \end{titlepage}
 
@@ -161,34 +161,111 @@ Muy parecida a PedidosYa pero con diferencias en condiciones de negocio, otro ti
 Fudo es una plataforma de gestión gastronómica en la nube que funciona 100 por ciento desde el navegador de una computadora, tablet o celular, sin necesidad de instalaciones complejas. Centraliza el salón, la cocina, el delivery, el control de stock, la caja y la facturación electrónica en un solo sistema.
 \end{justify}
 \chapter{Definición del problema}
-La problemática ligada al estado del arte en donde las aplicaciones existentes tienen diferente formas de negocio, estas no cubren las necesidades mas elementales en su totalidad por si solas, mientras una tiene la logistica de entrega bien solucionada, traslada los precios finales de os productos. Y los que trabajan como gestión de negocio no resuelven de forma autónoma los envíos, ya que terminan tercer izando con las antes mencionadas.
-Como dos pendientes a resolver son: Una solución propia de los envíos a domicilio y un sistema sencillo de manejar que cuente con lo necesario para el trabajo del día a día.
-\chapter{Solución propuesta}
+\begin{justify}
+La dependencia casi total de las empresas de delivery, con comisiones elevadas y condiciones contractuales inconvenientes son el factor principal para promover el cambio; Mientras que las comisiones dejan al comercio la disyuntiva entre trasladar los precios finales perdiendo ventas ó mantener los precios finales obteniendo menores ganancias, las condiciones inconvenientes que imponen estas aplicaciones son las de efectuar los pagos de forma semanal o quincenal reteniendo así capital que podría estar usando el negocio para sus propios gastos sin contar además que ese dinero ya le pertenece.
 
-\section{Análisis de requisitos}
+Otra desventaja de los sistemas en uso, es la propiedad de los datos, ya que las aplicaciones impulsan ventas, pero limitan el acceso a los mismos. Además de los productos que se venden y sus cantidades, el dato que más se pierde es el contacto directo con los clientes, si son de la zona o no. El comercio no tiene la posibilidad de analizar de forma directa a través de estas aplicaciones lo que vendió y por lo tanto si desea hacerlo, estará obligado a realizarlo por otro medio.
+\end{justify}
 
-\section{Especificaciones del sistema}
+\newpage
 
-\section{Análisis del sistema}
+\section{Análisis FODA}
+\begin{justify}
+Para este análisis se toma como referencia la comparación realizada en el estado del arte entre plataformas de delivery y sistemas de gestión para restaurantes. Dado que el sistema se encuentra en etapa de diseño, las fortalezas y debilidades se plantean como características previstas y no como resultados medidos. A partir de este gráfico se identifican los aspectos que el proyecto debe potenciar y los riesgos que debe considerar en su desarrollo.
+\end{justify}
 
-\chapter{Resultados}
-
-\chapter{Conclusiones}
-
-\section{Referencias}
-
-\section{Bibliografía}
-
-\section{Anexos}
-
-
+\vspace{1cm}
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.5\textwidth]{imagenes/modulos.png}
-	\caption{Costos de los planes}
+	\includegraphics[width=0.90\textwidth]{imagenes/analisisFODAClickFud.png}
+	\caption{Gráfico de análisis FODA}
 \end{figure}
+\chapter{Solución propuesta}
+\begin{justify}
+El sistema propuesto es una solución integral para la gestión de pedidos de restaurantes que operan su propio servicio de entrega a domicilio, sin intermediarios ni comisiones por pedido. Está dirigido a comercios gastronómicos de pequeña escala y involucra a tres tipos de usuarios: los clientes, el personal del local y los repartidores.
 
+La solución se compone de tres módulos que operan de forma coordinada. Un módulo de compra en línea permite a los clientes consultar el menú, realizar pedidos, pagar y seguir el estado de su entrega. Un módulo de gestión para el local recibe esos pedidos en tiempo real, permite también cargar los que ingresan por mostrador o teléfono, administrar el menú, registrar cobros y asignar cada pedido a un repartidor. Por último, un módulo para repartidores les permite ver sus entregas asignadas, informar su avance y registrar el cobro cuando corresponde.
+
+De este modo, el restaurante concentra en un único circuito la recepción, preparación, cobro y entrega de sus pedidos, y conserva la relación y los datos de sus clientes. El sistema se limita deliberadamente a las funciones esenciales del delivery propio, dejando fuera aspectos como la facturación electrónica o la gestión de inventario, con el fin de mantener una solución simple y de bajo costo.
+\end{justify}
+	
+\newpage
+\section{Análisis de requisitos}
+\vspace{0.5cm}
+\begin{center}
+\textbf{Requerimientos funcionales}
+\end{center}
+\vspace{0.5cm}
+\textbf{Web del cliente}
+\begin{itemize}
+	\item Ver el menú con categorías, precios y disponibilidad.
+	\item Armar un carrito y confirmar el pedido indicando la dirección de entrega o el retiro en el local.
+	\item Pagar en línea (por ejemplo con Mercado Pago) o elegir pago contra entrega.
+	\item Ver el estado del pedido (recibido, en preparación, en camino, entregado).
+\end{itemize}
+
+\vspace{0.5cm}
+\textbf{Aplicación de escritorio del local}
+\begin{itemize}
+	\item Recibir en tiempo real los pedidos de la web.
+	\item Cambiar el estado de un pedido y asignarlo a un repartidor.
+	\item Registrar cobros y cerrar la caja del día.
+	\item Administrar el menú (altas, bajas, precios y disponibilidad).
+	\item Consultar reportes básicos de ventas por día.	
+\end{itemize}
+
+\vspace{0.5cm}
+\textbf{Aplicación móvil del repartidor}
+\begin{itemize}
+	\item Iniciar sesión y ver los pedidos asignados.
+	\item Ver la dirección y los datos de entrega.
+	\item Actualizar el estado de la entrega (retirado, entregado).
+	\item Registrar el cobro si el pedido es contra entrega.
+\end{itemize}
+
+\vspace{0.5cm}
+\begin{center}
+	\textbf{Requerimientos no funcionales}
+\end{center}
+\vspace{0.5cm}
+
+\begin{itemize}
+	\item Seguridad: contraseñas cifradas, comunicación por HTTPS y permisos según el rol. Los datos de tarjeta no se almacenan, los procesa el proveedor de pagos.
+	\item Tiempo real: el local debe ver un pedido nuevo casi de inmediato.
+	\item Disponibilidad: el sistema debe estar operativo en el horario de atención del restaurante.
+	\item Usabilidad: interfaces simples que no requieran capacitación larga, con la aplicación de escritorio pensada para uso rápido en horas pico.
+	\item Mantenibilidad: código modular, con un backend único que compartan las tres aplicaciones.
+	\item Compatibilidad: la web debe funcionar en los navegadores actuales y en pantallas de celular, y la app móvil en Android.
+	\item Escalabilidad: capacidad para sumar más pedidos y repartidores sin rediseñar el sistema.	
+\end{itemize}
+
+\newpage
+
+\section{Especificaciones del sistema}
+\begin{justify}
+El sistema propuesto consiste en una plataforma integrada para la gestión de pedidos de un restaurante, compuesta por tres aplicaciones que comparten un mismo servidor y una base de datos centralizada.
+
+Los clientes accederán al sistema mediante una aplicación web, desde la cual podrán consultar el menú, personalizar sus pedidos y realizar compras sin necesidad de instalar software adicional. Esta aplicación será desarrollada utilizando React y TypeScript, permitiendo una interfaz moderna, adaptable a dispositivos móviles y de fácil mantenimiento.
+
+El restaurante dispondrá de una aplicación de escritorio, instalada en una computadora del local, encargada de recibir y administrar los pedidos en tiempo real, gestionar el menú, controlar el estado de las órdenes y administrar la información del negocio. Esta aplicación será desarrollada en Kotlin utilizando Compose Multiplatform, obteniendo una interfaz nativa y un mejor acceso a los recursos del sistema operativo, como impresoras y archivos locales.
+
+Los repartidores utilizarán una aplicación móvil para Android, desarrollada también en Kotlin, mediante la cual recibirán las entregas asignadas, visualizarán los datos del cliente y actualizarán el estado de cada envío. 
+
+Todas las aplicaciones se comunicarán con un backend central, desarrollado en Kotlin utilizando Spring Boot, el cual expondrá una API REST encargada de gestionar la lógica de negocio, la autenticación de usuarios, el procesamiento de pedidos y la comunicación entre los distintos componentes del sistema. Para las actualizaciones en tiempo real, como la recepción inmediata de nuevos pedidos o los cambios
+de estado de una entrega, se utilizarán conexiones mediante WebSockets.
+
+La información del sistema será almacenada en una base de datos PostgreSQL, elegida por su confiabilidad, soporte para transacciones, integridad de los datos y capacidad de escalabilidad, características fundamentales para una aplicación comercial.
+
+En cuanto a la seguridad, el acceso al sistema se realizará mediante autenticación basada en JSON Web Tokens (JWT), mientras que las contraseñas serán almacenadas utilizando algoritmos de hash seguros. Toda la comunicación entre las aplicaciones y el servidor se realizará mediante el protocolo HTTPS, garantizando la confidencialidad e integridad de la información transmitida.
+
+Para el procesamiento de pagos electrónicos, el sistema se integrará con una pasarela de pagos externa, como Mercado Pago, permitiendo realizar pagos mediante transferencia, código QR o tarjeta de manera segura, sin almacenar información financiera sensible dentro del sistema.
+
+La arquitectura propuesta permitirá mantener una única fuente de información para todas las aplicaciones, facilitando el mantenimiento, la escalabilidad y la incorporación de nuevas funcionalidades en el futuro.
+\end{justify}
+
+\newpage
+\section{Análisis del sistema}
 \begin{diagrama}[htbp]
 	\centering
 	\includegraphics[width=0.8\textwidth]{diagramas/caso_uso/casoUsoAdministrador.png}
@@ -224,5 +301,17 @@ Como dos pendientes a resolver son: Una solución propia de los envíos a domici
 	\includegraphics[width=0.8\textwidth]{diagramas/de_secuencia/diagramaSecuenciaRepartidor.png}
 	\caption{De secuencia usuario repartidor}
 \end{diagrama}
+\chapter{Resultados}
+
+\chapter{Conclusiones}
+
+\section{Referencias}
+
+\section{Bibliografía}
+
+\section{Anexos}
+
+
+
 
 \end{document}
